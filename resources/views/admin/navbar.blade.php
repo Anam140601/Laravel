@@ -1,11 +1,14 @@
+
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
   <a class="navbar-brand mr-1" href="{{route('admin.home')}}">
     <img src="{{url('img/rog.jpg')}}" width="12%">
     Admin ANIGASTORE
+    <button class="btn btn-link" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
   </a>
   
-
   <!-- Navbar Search -->
   <div class="ml-auto"></div>
 
@@ -14,7 +17,7 @@
     
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src="{{url('img/rog.jpg')}}" width="12%">
+        <img class="fas fa-user-circle fa-fw" src="img-user/{{Auth::user()->photo}}" width="12%">
         {{Auth::user()->name}}
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -29,7 +32,7 @@
 
 @push('modal')
 
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal  fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -44,8 +47,8 @@
         <a class="btn btn-primary" href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">Logout</a>
-            
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+
+            <form id="logout-form" action="{{route('logout') }}" method="POST" style="display: none;">
               {{ csrf_field() }}
             </form>
       </div>

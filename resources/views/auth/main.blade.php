@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@yield('Dashboard') Admin AnigaStore</title>
-    <link rel="icon" type="image/jpg" href="{{url('img/rog.jpg')}}">
+    <title>AnigaStore - @yield('title')</title>
+    <link rel="icon" type="jpg/image" href="{{url('/img/rog.jpg')}}">
 
     <!-- Bootstrap core CSS-->
     <link href="{{url('tema_sbAdmin/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -20,46 +20,14 @@
 
     <!-- Custom styles for this template-->
     <link href="{{url('tema_sbAdmin/css/sb-admin.css')}}" rel="stylesheet">
-    @stack('css')
 
   </head>
 
-  <body id="page-top">
+  <body class="bg-dark">
 
-    @include('admin.navbar')
-
-
-    <div id="wrapper">
-
-      <!-- Sidebar -->
-       @include('admin.sidebar')
-
-      <div id="content-wrapper">
-
-        <div class="container-fluid">
-
-          <!-- Page Content -->
-          @yield('content')
-
-        </div>
-        <!-- /.container-fluid -->
-
-        <!-- Sticky Footer -->
-        @include('admin.footer')
-
-      </div>
-      <!-- /.content-wrapper -->
-
+    <div class="container">
+      @yield('content')
     </div>
-    <!-- /#wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Modal-->
-    @stack('modal')
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{url('tema_sbAdmin/vendor/jquery/jquery.min.js')}}"></script>
@@ -67,11 +35,6 @@
 
     <!-- Core plugin JavaScript-->
     <script src="{{url('tema_sbAdmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{url('tema_sbAdmin/js/sb-admin.min.js')}}"></script>
-    <script type="text/javascript" src="{{url('tema_sbAdmin/js/navbar-nav.js')}}"></script>
-    @stack('js')
 
   </body>
 

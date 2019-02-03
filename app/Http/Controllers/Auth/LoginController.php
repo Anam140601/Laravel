@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-    /*
+    /*K
     |--------------------------------------------------------------------------
     | Login Controller
     |--------------------------------------------------------------------------
