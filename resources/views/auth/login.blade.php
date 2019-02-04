@@ -22,6 +22,7 @@
       <div class="form-label-group">
         <input type="password" id="inputPassword" 
         class="form-control {{$errors->has('password')? 'is-invalid' : ''}}" 
+        name="password" 
         placeholder="Password" required="required">
         <label for="inputPassword">Password</label>
         @if($errors->has('password'))
