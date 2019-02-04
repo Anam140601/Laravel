@@ -3,7 +3,7 @@
 
   <a class="navbar-brand mr-1" href="{{route('admin.home')}}">
     <img src="{{url('img/rog.jpg')}}" width="12%">
-    Admin ANIGASTORE
+    ANIGASTORE
     <button class="btn btn-link" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
@@ -21,7 +21,7 @@
         {{Auth::user()->name}}
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="{{route('admin.user.setting')}}">Settings</a>
+        <a class="dropdown-item" href="{{ route('admin.user.setting') }}" >Settings</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
       </div>

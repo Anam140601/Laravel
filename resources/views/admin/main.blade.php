@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@yield('Dashboard') Admin AnigaStore</title>
+    <title>@yield('title') AnigaStore</title>
     <link rel="icon" type="image/jpg" href="{{url('img/rog.jpg')}}">
 
     <!-- Bootstrap core CSS-->
