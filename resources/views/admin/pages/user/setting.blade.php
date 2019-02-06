@@ -4,6 +4,23 @@
 
 <h1>USER</h1>
 <hr>
+@if(session('result') == 'success')
+<div class="alert alert-success alert-dismissiable fade show" >
+	<strong>Update !</strong> Data Berhasil Di Update
+	<button type="button" class="close" data-dismiss="alert">
+		&times;
+	</button>
+</div>
+@elseif(session('result') == 'fail')
+<div class="alert alert-danger alert-dismissiable fade show" >
+	<strong>Failed !</strong> Data Gagal Di Update
+	<button type="button" class="close" data-dismiss="alert">
+		&times;
+	</button>
+</div>
+@endif
+
+
 <div class="row">
 	<div class="col-md-6">
 		<form action="{{ route('admin.user.setting')}}" method="post">
