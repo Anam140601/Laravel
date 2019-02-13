@@ -41,6 +41,8 @@
     <button class="btn btn-primary btn-block" type="submit">Login</button>
   </form>
   <div class="text-center">
+    <p>Don't have User Account?? Register New Account</p>
+    <a class="d-block small mt-3" href="{{route('register')}}">Register New Account</a>
     <a class="d-block small" href="{{route('password.request')}}">Forgot Password?</a>
   </div>
 </div>

@@ -2,6 +2,12 @@
 @section('title','User Setting |')
 @section('content')
 
+<?php 
+$img = "img-user";
+$photo = Auth::user()->photo;
+$avatar = url($img."/".$photo);
+ ?>
+
 <h1>USER</h1>
 <hr>
 @if(session('result') == 'success')
@@ -58,6 +64,13 @@
 						<label for="iRePassword">Re Password</label>
 						@if($errors->has('repassword'))
 						<div class="invalid-feedback">{{$errors->first('repassword')}}</div>
+						@endif
+					</div>
+					<div class="form-group form-label-group">
+						<img width="15%" src={{$avatar}}>
+						<input type="file" name="fileupoad" class="form-control {{$errors->has('name')?'is-invalid':''}}" id="ifileupload">
+						@if($errors->has('fileupload'))
+						<div class="invalid-feedback">{{$errors->first('fileupload')}}</div>
 						@endif
 					</div>
 
