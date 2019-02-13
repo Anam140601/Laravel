@@ -13,4 +13,13 @@ class UserController extends Controller
     	$data = User::where('name','like',"%{$req->keyword}%")->paginate(4);
     	return view('admin.pages.user.daftar',['data'=>$data]);
     }
+    public function add()
+    {
+    	return view('admin.pages.user.add');
+    }
+
+    public function save()
+    {
+    	return 'Fungsi Save';
+    }
 }
