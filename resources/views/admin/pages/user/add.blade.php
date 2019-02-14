@@ -15,31 +15,49 @@
 
 				<div class="card-body">
 					<div class="form-group form-label-group">
-						<input type="text" name="name" class="form-control" value="{{old('name')}}" id="iName" placeholder="Username" required>
+						<input type="text" name="name" class="form-control {{$errors->has('name')?'is-invalid':''}}" value="{{old('name')}}" id="iName" placeholder="Username" required>
 						<label for="iName">Username</label>
+						@if($errors->has('name'))
+						<div class="invalis-feedback">{{$errors->first('name')}}</div>
+						@endif
 					</div>
 
 					<div class="form-group form-label-group">
-						<input type="email" name="email" class="form-control" value="{{old('email')}}" id="iEmail" placeholder="email" required>
+						<input type="email" name="email" class="form-control {{$errors->has('email')?'is-invalid':''}}" value="{{old('email')}}" id="iEmail" placeholder="email" required>
 						<label for="iEmail">Email</label>
+						@if($errors->has('email'))
+						<div class="invalis-feedback">{{$errors->first('email')}}</div>
+						@endif
 					</div>
 
 					<div class="form-group form-label-group">
-						<input type="passord" name="passord" class="form-control" value="{{old('passord')}}" id="iPassword" placeholder="Password" required>
+						<input type="passord" name="passord" class="form-control {{$errors->has('password')?'is-invalid':''}}" id="iPassword" placeholder="Password" required>
 						<label for="iPassword">Pasword</label>
+						@if($errors->has('password'))
+						<div class="invalis-feedback">{{$errors->first('password')}}</div>
+						@endif
 					</div>
 
 					<div class="form-group form-label-group">
-						<input type="passord" name="repassword" class="form-control" value="{{old('repassword')}}" id="iRePassword" placeholder="Confirm Password" required>
+						<input type="passord" name="repassword" class="form-control {{$errors->has('repassword')?'is-invalid':''}}" id="iRePassword" placeholder="Confirm Password" required>
 						<label for="iRePassword">Confirm Password</label>
+						@if($errors->has('repassword'))
+						<div class="invalis-feedback">{{$errors->first('repassword')}}</div>
+						@endif
 					</div>
 					
 					<div class="form-group form-label-group">
+						<?php 
+						$val = old('akses');
+						 ?>
 						<select class="form-control" name="akses">
-							<option value="">Akses Sebagai :</option>
-							<option value="Operator">Operator</option>
-							<option value="Admin">Administrator</option>
+							<option value="" {{$val==""?'selected':''}}>Akses Sebagai :</option>
+							<option value="Operator" {{$val=="Admin"?'selected':''}}>Operator</option>
+							<option value="Admin" {{$val=="Operator"?'selected':''}}>Administrator</option>
 						</select>
+						@if($errors->has('akses'))
+						<div class="invalis-feedback">{{$errors->first('akses')}}</div>
+						@endif
 					</div>
 				</div>
 				<div class="card-footer">
