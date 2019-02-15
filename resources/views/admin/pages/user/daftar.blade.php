@@ -15,9 +15,17 @@ $avatar = url($img."/".$photo);
 <h1>User</h1>
 <hr>
 
+@if(session('result') == 'success')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Saved!</strong> <small>Success saved record</small>
+	<button type="button" class="close" data-dismiss="alert" > &times;</button>
+</div>
+@endif
+
+
 <div class="row">
 	<div class="col-md-6 mb-3">
-		<a href="{{route('admin.user.add')}}" class="btn btn-primary">Tambah User</a>
+		<a href="{{route('admin.user.add')}}" class="btn btn-primary">New User</a>
 	</div>
 
 	<div class="col-md-6 mb-3">

@@ -36,15 +36,15 @@ $avatar = url($img."/".$photo);
 					{{ csrf_field() }}
 
 					<div class="form-group form-label-group">
-						<input type="text" name="name" class="form-control {{$errors->has('name')?'is-invalid':''}}" value="{{ old('name',$dt->name) }}" id="iName" placeholder="Name" required>
-						<label for="iName">Name</label>
+						<input type="text" name="name" class="form-control {{$errors->has('name')?'is-invalid':''}}" value="{{ old('name',$dt->name) }}" id="iName" placeholder="Username" required>
+						<label for="iName">Username</label>
 						@if($errors->has('name'))
 						<div class="invalid-feedback">{{$errors->first('name')}}</div>
 						@endif
 					</div>
 					<div class="form-group form-label-group">
-						<input type="email" name="email" class="form-control {{$errors->has('name')?'is-invalid':''}}" value="{{ old('email',$dt->email) }}" id="iEmail" placeholder="Email" required>
-						<label for="iEmail">Email</label>
+						<input type="email" name="email" class="form-control {{$errors->has('name')?'is-invalid':''}}" value="{{ old('email',$dt->email) }}" id="iEmail" placeholder="User Email" required>
+						<label for="iEmail">User Email</label>
 						@if($errors->has('email'))
 						<div class="invalid-feedback">{{$errors->first('email')}}</div>
 						@endif
@@ -60,8 +60,8 @@ $avatar = url($img."/".$photo);
 						</div>
 					</div>
 					<div class="form-group form-label-group">
-						<input type="password" name="repassword" class="form-control {{$errors->has('name')?'is-invalid':''}}" id="iRePassword" placeholder="Re Password">
-						<label for="iRePassword">Re Password</label>
+						<input type="password" name="repassword" class="form-control {{$errors->has('name')?'is-invalid':''}}" id="iRePassword" placeholder="Confirm Password">
+						<label for="iRePassword">Confirm Password</label>
 						@if($errors->has('repassword'))
 						<div class="invalid-feedback">{{$errors->first('repassword')}}</div>
 						@endif
