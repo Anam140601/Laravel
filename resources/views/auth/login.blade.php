@@ -34,16 +34,15 @@
       <div class="checkbox">
         <label>
           <input type="checkbox" name="remember" {{old('remember') ? 'checked' : ''}}>
-          Remember Password
+          Remember Me
         </label>
       </div>
     </div>
     <button class="btn btn-primary btn-block" type="submit">Login</button>
   </form>
   <div class="text-center">
-    <p>Don't have User Account?? Register New Account</p>
-    <a class="d-block small mt-3" href="{{route('register')}}">Register New Account</a>
-    <a class="d-block small" href="{{route('password.request')}}">Forgot Password?</a>
+    <p>Don't have User Account?? <a href="{{route('register')}}">Register</a> Now</p>
+    <p>Forgot your password?? click <a href="{{route('password.request')}}">here</a></p>
   </div>
 </div>
 </div>

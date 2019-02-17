@@ -1,8 +1,4 @@
-<?php 
-$img = "img-user";
-$photo = Auth::user()->photo;
-$avatar = url($img."/".$photo);
- ?>
+
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -22,7 +18,7 @@ $avatar = url($img."/".$photo);
     
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="fa-fw rounded" src={{$avatar}}>
+        <img class="fa-fw rounded" src="{{ asset('storage/'.auth()->user()->photo) }}" alt="" width="12%">
         {{Auth::user()->name}}
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">

@@ -22,9 +22,15 @@ Route::group(['middleware'=>['auth']], function(){
 		})->name('admin.home');
 
 		Route::prefix('user')->group(function(){
+
 			Route::get('/','UserController@daftar')->name('admin.user')->middleware('akses.admin');
+
 			Route::get('/add','UserController@add')->name('admin.user.add')->middleware('akses.admin');
 			Route::post('/add','UserController@save')->middleware('akses.admin');
+
+			Route::get('/edit/{id}','UserController@edit')->name('admin.user.edit')->middleware('akses.admin');
+			Route::post('/edit/{id}','UserController@update')->middleware('akses.admin');
+
 			Route::get('/setting','UserSettingController@form')->name('admin.user.setting');
 			Route::post('/setting','UserSettingController@update');
 		});
@@ -36,6 +42,6 @@ Route::group(['middleware'=>['auth']], function(){
 Auth::routes();
 
 Route::any('register',function(){
-	return abort();
+	return abort(404);
 });
 

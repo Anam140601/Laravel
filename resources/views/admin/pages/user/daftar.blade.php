@@ -2,13 +2,9 @@
 @section('title','User')
 @section('content')
 
-@foreach($data as $dt)
-<?php 
-$img = "img-user";
-$photo = $dt->photo;
-$avatar = url($img."/".$photo);
- ?>
- @endforeach
+
+
+
 
 
 
@@ -33,7 +29,7 @@ $avatar = url($img."/".$photo);
 			<div class="input-group">
 				<input type="text" name="keyword" value="{{ request('keyword') }}"  class="form-control">
 				<div class="input-group-append">
-					<button type="submit" class="btn btn-success">Search</button>
+					<button type="submit" class="btn btn-success">Search!</button>
 				</div>
 			</div>
 		</form>
@@ -46,12 +42,13 @@ $avatar = url($img."/".$photo);
 	</tr>
 	@foreach($data as $dt)
 	<tr>
-		<td><img src={{$avatar}} width="65" class="rounded"></td>
+		<td><img src="{{ url('storage/'.$dt->photo) }}" width="65" class="rounded"></td>
+		
 		<td>{{$dt->name }}</td>
 		<td>{{$dt->email}}</td>
 		<td>{{$dt->akses}}</td>
 		<td>
-			<a href="#" class="btn btn-success btn-sm">
+			<a href="{{ route('admin.user.edit',['id'=>$dt->id]) }}" class="btn btn-success btn-sm">
 				<i class="fa fa-w fa-edit"></i>
 			</a>
 

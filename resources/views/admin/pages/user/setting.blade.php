@@ -2,17 +2,13 @@
 @section('title','User Setting |')
 @section('content')
 
-<?php 
-$img = "img-user";
-$photo = Auth::user()->photo;
-$avatar = url($img."/".$photo);
- ?>
+
 
 <h1>USER</h1>
 <hr>
 @if(session('result') == 'success')
 <div class="alert alert-success alert-dismissiable fade show" >
-	<strong>Update !</strong> Data Berhasil Di Update
+	<strong>Success !</strong> Record has been saved
 	<button type="button" class="close" data-dismiss="alert">
 		&times;
 	</button>
@@ -29,7 +25,7 @@ $avatar = url($img."/".$photo);
 
 <div class="row">
 	<div class="col-md-6">
-		<form action="{{ route('admin.user.setting')}}" method="post">
+		<form action="{{ route('admin.user.setting')}}" method="post" enctype="multipart/form-data">
 			<div class="card mb-3">
 				<div class="card-header"><h5>Setting</h5></div>
 				<div class="card-body">
@@ -67,17 +63,19 @@ $avatar = url($img."/".$photo);
 						@endif
 					</div>
 					<div class="form-group form-label-group">
-						<img width="15%" src={{$avatar}}>
-						<input type="file" name="fileupoad" class="form-control {{$errors->has('name')?'is-invalid':''}}" id="ifileupload">
-						@if($errors->has('fileupload'))
-						<div class="invalid-feedback">{{$errors->first('fileupload')}}</div>
+						<img src="{{ asset('storage/'.auth()->user()->photo) }}" alt="" height="65">
+						<input type="file" name="photo" class="form-control {{$errors->has('photo')?'is-invalid':''}}" id="photo" value="{{ old('photo',$dt->photo) }}">
+						@if($errors->has('photo'))
+						<span>
+							<strong>{{$errors->first('photo')}}</strong>
+						</span>
 						@endif
 					</div>
 
 
 				</div>
 				<div class="card-footer">
-					<button type="submit" class="btn btn-primary shadow-sm">Update</button>
+					<button type="submit" class="btn btn-primary shadow-sm">Save</button>
 				</div>
 			</div>
 		</form>

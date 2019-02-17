@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Storage;
 
 class UserSettingController extends Controller
 {
@@ -15,6 +16,28 @@ class UserSettingController extends Controller
     }
     public function update(Request $req)
     {
+
+
+        
+        if (empty($req->photo)) {
+            $field = [
+                'photo'=>$req->photo,
+            ];
+
+        }else {
+
+            if ($req->user()->photo) {
+                Storage::delete($req->user()->photo);
+            }
+
+            $photo = $req->file('photo')->store('photos');
+            $req -> user()->update([
+                'photo' => $photo
+            ]);
+        }
+        
+
+
     	$id = Auth::id();
     	\Validator::make($req->all(), [
     		'name'=>'required|between:3,100',
