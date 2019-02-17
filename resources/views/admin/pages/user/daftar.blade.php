@@ -13,7 +13,14 @@
 
 @if(session('result') == 'success')
 <div class="alert alert-success alert-dismissible fade show">
-	<strong>Saved!</strong> <small>Success saved record</small>
+	<strong>Saved!</strong> <small>Success Saved Record</small>
+	<button type="button" class="close" data-dismiss="alert" > &times;</button>
+</div>
+@endif
+
+@if(session('result') == 'update')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Saved!</strong> <small>Success Updated Record</small>
 	<button type="button" class="close" data-dismiss="alert" > &times;</button>
 </div>
 @endif
