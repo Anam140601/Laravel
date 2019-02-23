@@ -14,7 +14,7 @@
 				</div>
 				<div class="card-body">
 					<div class="form-group form-label-group">
-						<input type="text" class="form-control " id="iKategori" name="kategori" value="{{ old('kategori') }}" placeholder="Category" required>
+						<input type="text" class="form-control {{ $errors->has('kategori')?'is-invalid':'' }}" id="iKategori" name="kategori" value="{{ old('kategori') }}" placeholder="Category" required>
 						<label for="iKategori">Category</label>
 						@if($errors->has('kategori'))
 						<div class="invalid-feedback">{{ $errors->first('kategori') }}</div>
