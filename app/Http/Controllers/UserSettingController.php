@@ -31,9 +31,9 @@ class UserSettingController extends Controller
             }
 
             $photo = $req->file('photo')->store('photos');
-            $req -> user()->update([
+            $field = [
                 'photo' => $photo
-            ]);
+                ];
         }
         
 
@@ -51,11 +51,13 @@ class UserSettingController extends Controller
     			'name'=>$req->name,
     			'email'=>$req->email,
     			'password'=>bcrypt($req->password),
+                'photo' => $photo,
     		];
     	}else{
     		$field = [
     			'name'=>$req->name,
     			'email'=>$req->email,
+                'photo' => $photo,
     		];
     	}
     	$result = User::where('id',$id)->update($field);

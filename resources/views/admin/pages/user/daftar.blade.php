@@ -3,24 +3,19 @@
 @section('content')
 
 
-
-
-
-
-
 <h1>User</h1>
 <hr>
 
 @if(session('result') == 'success')
 <div class="alert alert-success alert-dismissible fade show">
-	<strong>Saved!</strong> <small>Success Saved Record</small>
+	<strong>Saved!</strong> <small>New User has been Saved!</small>
 	<button type="button" class="close" data-dismiss="alert" > &times;</button>
 </div>
 @endif
 
 @if(session('result') == 'update')
 <div class="alert alert-success alert-dismissible fade show">
-	<strong>Saved!</strong> <small>Success Updated Record</small>
+	<strong>Saved!</strong> <small>Success Updated Data</small>
 	<button type="button" class="close" data-dismiss="alert" > &times;</button>
 </div>
 @endif
@@ -114,7 +109,7 @@
 
 			<div class="modal-footer">
 				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-				<button class="btn btn-primary btn-delete" type="button">Delete</button>
+				<button class="btn btn-primary btn-delete" type="button">Yes</button>
 			</div>
 		</div>
 	</div>

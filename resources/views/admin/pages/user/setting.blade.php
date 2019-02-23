@@ -1,21 +1,21 @@
 @extends('admin.main')
-@section('title','User Setting |')
+@section('title','Setting |')
 @section('content')
 
 
 
-<h1>USER</h1>
+<h1>{{$dt->akses}}</h1>
 <hr>
 @if(session('result') == 'success')
 <div class="alert alert-success alert-dismissiable fade show" >
-	<strong>Success !</strong> Record has been saved
+	<strong>Success!</strong> Data has been Updated
 	<button type="button" class="close" data-dismiss="alert">
 		&times;
 	</button>
 </div>
 @elseif(session('result') == 'fail')
 <div class="alert alert-danger alert-dismissiable fade show" >
-	<strong>Failed !</strong> Data Gagal Di Update
+	<strong>Failed !</strong> Data failed to Update
 	<button type="button" class="close" data-dismiss="alert">
 		&times;
 	</button>
@@ -52,7 +52,7 @@
 						<div class="invalid-feedback">{{$errors->first('password')}}</div>
 						@endif
 						<div class="form-text text-muted">
-							<small>Kosongkan Password bila tidak diubah....</small>
+							<small>Keep empty if you not change your password..</small>
 						</div>
 					</div>
 					<div class="form-group form-label-group">
