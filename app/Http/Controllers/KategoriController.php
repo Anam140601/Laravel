@@ -14,4 +14,13 @@ class KategoriController extends Controller
 
 
     }
+    public function add()
+    {
+    	return view('admin.pages.kategori.add');
+    }
+
+    public function save(Request $req)
+    {
+    	
+    	return 'fungsi save';    }
 }
