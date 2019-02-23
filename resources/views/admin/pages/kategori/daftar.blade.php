@@ -3,6 +3,16 @@
 @section('content')
 <h1>Kategori</h1>
 <hr>
+
+@if(session('result')=='success')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Saved!</strong> New Category has been saved.
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+</div>
+@endif
+
+
+
 <div class="row">
 	<div class="col-md-6 mb-3">
 		<a href="{{route('admin.kategori.add')}}" class="btn btn-success">Add</a>

@@ -4,6 +4,16 @@
 <h1>Add <small class="text-muted">Category</small></h1>
 <hr>
 
+
+@if(session('result')=='fail')
+<div class="alert alert-danger alert-dismissible fade show">
+	<strong>Failed!</strong> New Category not be saved.
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+</div>
+@endif
+
+
+
 <div class="row">
 	<div class="col-md-6 mb-3">
 		<form action="{{ route('admin.kategori.add') }}" method="POST">
