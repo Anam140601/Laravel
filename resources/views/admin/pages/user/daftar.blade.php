@@ -52,7 +52,7 @@
 	</div>
 </div>
 
-<table class="table table-stiped mb-3">
+<table class="table table-striped mb-3">
 	<tr>
 		<th>Avatar</th><th>Username</th><th>Email</th><th>Akses</th><th>&nbsp;</th>
 	</tr>

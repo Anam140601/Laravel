@@ -24,12 +24,24 @@ class KategoriController extends Controller
     	\Validator::make($req->all(),[
     		'kategori'=>'required|between:3,100|unique:kategori,nama_kategori',
     	])->validate();
+
     	$result = new Kategori;
     	$result->nama_kategori = $req->kategori;
+    	
     	if ($result->save()) {
     	   	return redirect()->route('admin.kategori')->with('result','success');
     	} else {
     		return back()->with('result','fail')->withInput();
     	}
+    }
+    public function edit($id)
+    {
+    	$data = Kategori::where('id',$id)->first();
+    	return view('admin.pages.kategori.edit',['rc'=>$data]);
+    }
+
+    public function update(Request $req)
+    {
+    	return 'funsi update';
     }
 }

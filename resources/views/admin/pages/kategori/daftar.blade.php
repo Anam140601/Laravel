@@ -15,14 +15,14 @@
 
 <div class="row">
 	<div class="col-md-6 mb-3">
-		<a href="{{route('admin.kategori.add')}}" class="btn btn-success">Add</a>
+		<a href="{{route('admin.kategori.add')}}" class="btn btn-primary">Add</a>
 	</div>
 	<div class="col-md-6 mb-3">
 		<form action="{{ route('admin.kategori') }}" method="GET">
 			<div class="input-group">
 				<input type="text" class="form-control" name="keyword" value="{{ request('keyword') }}">
 				<div class="input-group-append">
-					<button class="btn btn-primary" type="submit">
+					<button class="btn btn-success" type="submit">
 						Search!
 					</button>
 				</div>
@@ -39,7 +39,7 @@
 	<tr>
 		<td>{{ $dt->nama_kategori }}</td>
 		<td>
-			<a href="#" class="btn btn-success btn-sm">
+			<a href="{{route('admin.kategori.edit',['id'=>$dt->id])}}" class="btn btn-success btn-sm">
 				<i class="fa fa-w fa-edit"></i>
 			</a>
 			<button class="btn btn-danger btn-sm" type="button">
