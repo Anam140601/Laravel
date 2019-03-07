@@ -11,6 +11,13 @@
 </div>
 @endif
 
+@if(session('result')=='update')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Update!</strong> Category has been updated.
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+</div>
+@endif
+
 
 
 <div class="row">
