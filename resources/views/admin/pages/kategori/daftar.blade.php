@@ -1,7 +1,7 @@
 @extends('admin.main')
-@section('title','Kategori')
+@section('title','Category')
 @section('content')
-<h1>Kategori</h1>
+<h1>Category</h1>
 <hr>
 
 @if(session('result')=='success')
@@ -14,9 +14,7 @@
 
 
 <div class="row">
-	<div class="col-md-6 mb-3">
-		<a href="{{route('admin.kategori.add')}}" class="btn btn-primary">Add</a>
-	</div>
+	<div class="col-md-6 mb-3"></div>
 	<div class="col-md-6 mb-3">
 		<form action="{{ route('admin.kategori') }}" method="GET">
 			<div class="input-group">
@@ -33,7 +31,7 @@
 
 <table class="table table-striped mb-3">
 	<tr>
-		<th>Kategori</th><th>&nbsp;</th>
+		<th>Category</th><th>&nbsp;</th>
 	</tr>
 	@foreach($data as $dt)
 	<tr>

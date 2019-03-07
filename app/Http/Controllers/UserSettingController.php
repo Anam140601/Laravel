@@ -16,14 +16,12 @@ class UserSettingController extends Controller
     }
     public function update(Request $req)
     {
-
+        $data = User::where('id',Auth::id())->first();
 
         
         if (empty($req->photo)) {
-            $field = [
-                'photo'=>$req->photo,
-            ];
-
+            
+            $photo = $data->photo;
         }else {
 
             if ($req->user()->photo) {
@@ -31,9 +29,7 @@ class UserSettingController extends Controller
             }
 
             $photo = $req->file('photo')->store('photos');
-            $field = [
-                'photo' => $photo
-                ];
+            
         }
         
 

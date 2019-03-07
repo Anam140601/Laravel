@@ -36,9 +36,7 @@
 
 
 <div class="row">
-	<div class="col-md-6 mb-3">
-		<a href="{{route('admin.user.add')}}" class="btn btn-primary">New User</a>
-	</div>
+	<div class="col-md-6 mb-3"></div>
 
 	<div class="col-md-6 mb-3">
 		<form action="{{ route('admin.user') }}" method="GET">
